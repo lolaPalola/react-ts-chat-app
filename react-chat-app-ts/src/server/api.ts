@@ -10,7 +10,7 @@ const createConnection = async () => {
     try {
         //create the PostgreSQL connection
         const connection = await createPostgresConnection({
-            connectionString: process.env["POSTGRES_STRING"] || "postgres://postgres:la1234@localhost:5432/chat-app",
+            connectionString: process.env["POSTGRES_STRING"] || "postgres://postgres:lola1234@localhost:5432/chat-app",
         });
 
         console.log("PostgreSQL connection created");
