@@ -15,7 +15,8 @@ export class UserModel {
 
     @Fields.string()
     password: string = "";
-
+}
+/*
     remult: Remult;
 
     async create(user: UserModel): Promise<UserModel> {
@@ -60,6 +61,6 @@ export class UserModel {
         }
     }
 }
-
+*/
 // Export UserModel
 export { UserModel as User };

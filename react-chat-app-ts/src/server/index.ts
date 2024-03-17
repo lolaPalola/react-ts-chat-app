@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-//import userRouter from '../server/routes/userRoutes'; 
+import userRouter from '../server/routes/userRoute'; 
 //import { User } from './model/userModel';
 import { remult } from 'remult';
 import { api } from './api';
@@ -11,7 +11,7 @@ app.use(api)
 dotenv.config();
 app.use(cors());
 app.use(express.json());
-//app.use("/api/auth", userRouter);
+app.use("/api/auth", userRouter);
 
 const server = app.listen(5000,()=>{
     console.log("Server Started on port 5000" )
