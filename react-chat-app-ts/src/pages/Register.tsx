@@ -26,11 +26,11 @@ const Register: React.FC = () => {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        handleValidation();
-        /*
+           // console.log("in validation", registerRoute)
         if (handleValidation()) {
-            console.log("in validation", registerRoute);
+            console.log("in validation");
             const { password, confirmpassword, username, email } = values;
+           /*
             try {
                 const { data } = await axios.post(registerRoute, {
                     username,
@@ -41,8 +41,8 @@ const Register: React.FC = () => {
             } catch (error) {
                 console.error("Error occurred:", error);
             }
+            */
         }
-        */
         
     };
     const handleValidation = () => {
