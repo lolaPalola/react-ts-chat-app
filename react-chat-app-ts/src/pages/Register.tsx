@@ -45,7 +45,6 @@ const Register: React.FC = () => {
         */
         
     };
-    /*
     const handleValidation = () => {
         const { password, confirmpassword, username, email } = values;
         if (password !== confirmpassword) {
@@ -63,23 +62,7 @@ const Register: React.FC = () => {
         }
         return true; // Return true if all validations pass
     };
-    */
    
-   const handleValidation = ()=>{
-        const { password, confirmpassword, username, email } = values;
-        if (password !== confirmpassword) {
-            console.log("in validation", toast)
-            toast.error("Passwords do not match",{
-                position: "bottom-right",
-                autoClose: 8000,
-                pauseOnHover: true,
-                draggable: true,
-                theme: 'dark',
-            });
-            //return false;
-   }
-}
-    
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setValues({ ...values, [event.target.name]: event.target.value });
     };
