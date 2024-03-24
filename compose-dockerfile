@@ -1,0 +1,60 @@
+# docker compose yaml
+version: '3'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: lola1234
+      POSTGRES_DB: chat-app
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  chat-app:
+    image: chat-app-img
+    depends_on:
+      - db
+    environment:
+      PG_URL: postgres://postgres:lola1234@db:5432/chat-app
+      PORT: 3002
+    ports:
+      - "3002:3002"
+
+volumes:
+  db-data:
+
+
+# Dockerfile
+version: '3'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: lola1234
+      POSTGRES_DB: chat-app
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  chat-app:
+    image: chat-app-img
+    depends_on:
+      - db
+    environment:
+      PG_URL: postgres://postgres:lola1234@db:5432/chat-app
+      PORT: 3002
+    ports:
+      - "3002:3002"
+
+volumes:
+  db-data:
+
+
+
+
